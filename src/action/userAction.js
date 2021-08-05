@@ -82,15 +82,23 @@ export const postUsersCreate = (data) => {
   };
 };
 
-export const deleteUsersDetail = () => {
+export const deleteDataUsers = () => {
     return dispatch =>{
-            dispatch({
-                type: GET_USERS_DETAIL,
-                payload:{
-                    data: false,
-                    errorMessage: false,
-                }
-            });
+        dispatch({
+            type: GET_USERS_DETAIL,
+            payload:{
+                data: false,
+                errorMessage: false,
+            }
+        });
+
+        dispatch({
+            type: POST_USERS_CREATE,
+            payload:{
+                data: false,
+                errorMessage: false,
+            }
+        });
     };
 };
 
