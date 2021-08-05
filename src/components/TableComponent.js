@@ -1,6 +1,6 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
-import { Container, Button, Row, Col } from "reactstrap";
+import { Container, Button, Row, Col, Spinner } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInfo,
@@ -11,6 +11,7 @@ import {
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 const { SearchBar } = Search;
 const columns = [
   {
@@ -67,13 +68,21 @@ const defaultSorted = [
   },
 ];
 
+const mapStateToProps = (state) => {
+  return { 
+    getUsersList: state.users.getUsersList,
+    errorUsersList: state.users.errorUsersList 
+  }
+}
+
 const TableComponent = (props) => {
   return (
     <Container>
+      { props.getUsersList ? 
       <ToolkitProvider
         bootstrap4
         keyField="id"
-        data={props.content}
+        data={props.getUsersList}
         columns={columns}
         defaultSorted={defaultSorted}
         search
@@ -101,9 +110,14 @@ const TableComponent = (props) => {
             />
           </div>
         )}
-      </ToolkitProvider>
+      </ToolkitProvider> : 
+      ( 
+      <div className="text-center">
+        { props.errorUsersList ? <h3>{props.errorUsersList}</h3> : <Spinner color="blue" /> }
+      </div> 
+      )}
     </Container>
   );
 };
 
-export default TableComponent;
+export default connect(mapStateToProps, null)(TableComponent);
