@@ -19,7 +19,7 @@ const JumbotronComponent = (props) => {
         </p>
         <hr className="my-2" />
         <p className="lead">
-          <Button color="primary">
+          <Button color="dark">
             <FontAwesomeIcon icon={faInfo} />
             Learn More
           </Button>

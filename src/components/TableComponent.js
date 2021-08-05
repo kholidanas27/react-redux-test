@@ -44,17 +44,17 @@ const columns = [
       return (
         <div>
           <Link to={"detail/" + row.userId}>
-            <Button color="dark" className="mr-2">
-              <FontAwesomeIcon icon={faInfo} /> Detail
+            <Button color="secondary" className="mr-2">
+              <FontAwesomeIcon icon={faInfo} />Detail
             </Button>
           </Link>
           <Link to={"edit/" + row.userId}>
-            <Button color="dark" className="mr-2">
-              <FontAwesomeIcon icon={faEdit} /> Edit
+            <Button color="warning" className="mr-2">
+              <FontAwesomeIcon icon={faEdit} />Edit
             </Button>
           </Link>
-          <Button color="dark" className="mr-2">
-            <FontAwesomeIcon icon={faTrash} /> Delete
+          <Button color="danger" className="mr-2">
+            <FontAwesomeIcon icon={faTrash} />Delete
           </Button>
         </div>
       );
@@ -92,7 +92,7 @@ const TableComponent = (props) => {
             <Row>
               <Col>
                 <Link to="/create">
-                  <Button color="dark" className="mr-2">
+                  <Button color="primary" className="mr-2">
                     <FontAwesomeIcon icon={faUserPlus} /> Create User
                   </Button>
                 </Link>
