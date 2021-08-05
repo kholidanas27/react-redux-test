@@ -1,11 +1,16 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
-import { Container, Button } from "reactstrap";
+import { Container, Button, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInfo,
+  faEdit,
+  faTrash,
+  faUserPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
-
+import { Link } from "react-router-dom";
 const { SearchBar } = Search;
 const columns = [
   {
@@ -37,14 +42,16 @@ const columns = [
     formatter: (rowContent, row) => {
       return (
         <div>
-          <Button color="dark" className="mr-2">
-            <FontAwesomeIcon icon={faInfo} /> Detail
-          </Button>
-
-          <Button color="dark" className="mr-2">
-            <FontAwesomeIcon icon={faEdit} /> Edit
-          </Button>
-
+          <Link to={"detail/" + row.userId}>
+            <Button color="dark" className="mr-2">
+              <FontAwesomeIcon icon={faInfo} /> Detail
+            </Button>
+          </Link>
+          <Link to={"edit/" + row.userId}>
+            <Button color="dark" className="mr-2">
+              <FontAwesomeIcon icon={faEdit} /> Edit
+            </Button>
+          </Link>
           <Button color="dark" className="mr-2">
             <FontAwesomeIcon icon={faTrash} /> Delete
           </Button>
@@ -73,9 +80,20 @@ const TableComponent = (props) => {
       >
         {(props) => (
           <div>
-            <div className="float-right">
-              <SearchBar {...props.searchProps} placeholder="Search .." />
-            </div>
+            <Row>
+              <Col>
+                <Link to="/create">
+                  <Button color="dark" className="mr-2">
+                    <FontAwesomeIcon icon={faUserPlus} /> Create User
+                  </Button>
+                </Link>
+              </Col>
+              <Col>
+                <div className="float-right">
+                  <SearchBar {...props.searchProps} placeholder="Search .." />
+                </div>
+              </Col>
+            </Row>
             <hr />
             <BootstrapTable
               {...props.baseProps}
