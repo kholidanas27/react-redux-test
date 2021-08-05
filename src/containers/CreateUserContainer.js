@@ -8,8 +8,8 @@ import Swal from "sweetalert2";
 
 const mapStateToProps = (state) => {
   return {
-    getResponDataUsers: state.users.getResponDataUsers,
-    errorResponDataUsers: state.users.errorResponDataUsers,
+    getResponsDataUsers: state.users.getResponsDataUsers,
+    errorResponsDataUsers: state.users.errorResponDataUsers,
   };
 };
 
@@ -18,21 +18,21 @@ class CreateUserContainer extends Component {
     this.props.dispatch(postUsersCreate(data));
   }
   render() {
-    if (this.props.getResponDataUsers || this.props.errorResponDataUsers) {
-      if(this.props.errorResponDataUsers)
+    if (this.props.getResponsDataUsers || this.props.errorResponsDataUsers) {
+      if(this.props.errorResponsDataUsers)
       {
         Swal.fire(
             "Failed!",
-            this.props.errorResponDataUsers,
+            this.props.errorResponsDataUsers,
             "error"
           );
       }else {
         Swal.fire(
             "Users Created!",
             "User Id : " +
-              this.props.getResponDataUsers.userId +
+              this.props.getResponsDataUsers.userId +
               " , Id : " +
-              this.props.getResponDataUsers.id,
+              this.props.getResponsDataUsers.id,
             "success"
           );
       }
@@ -40,6 +40,7 @@ class CreateUserContainer extends Component {
     return (
       <Container>
         <BackComponent />
+        <h1>Tambah User</h1>
         <FormComponent onSubmit={(data) => this.handleSubmit(data)} />
       </Container>
     );

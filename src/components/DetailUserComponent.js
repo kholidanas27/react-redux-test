@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const DetailUserComponent = (props) => {
     return (
-    <Table>
+    <Table striped>
       <tbody>
         <tr>
           <td width="200">User Id</td>

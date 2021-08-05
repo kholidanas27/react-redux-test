@@ -1,11 +1,11 @@
-import { GET_USERS_DETAIL, GET_USERS_LIST, POST_USERS_CREATE } from '../action/userAction';
+import { GET_USERS_DETAIL, GET_USERS_LIST, POST_USERS_CREATE, PUT_USERS_EDIT } from '../action/userAction';
 
 let initialState = {
   getUsersList: false,
   errorUsersList: false,
   getUsersDetail: false,
   errorUsersDetail: false,
-  getResponDataUsers: false,
+  getResponsDataUsers: false,
   errorResponsDataUsers: false,
   title: "React Redux Test",
 };
@@ -26,7 +26,13 @@ const users = (state = initialState, action) => {
     case POST_USERS_CREATE:
       return {
         ...state,
-        getResponDataUsers: action.payload.data,
+        getResponsDataUsers: action.payload.data,
+        errorResponsDataUsers: action.payload.errorMessage,
+      };
+    case PUT_USERS_EDIT:
+      return {
+        ...state,
+        getResponsDataUsers: action.payload.data,
         errorResponsDataUsers: action.payload.errorMessage,
       };      
 
