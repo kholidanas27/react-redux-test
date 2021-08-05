@@ -28,7 +28,7 @@ class CreateUserContainer extends Component {
           );
       }else {
         Swal.fire(
-            "Users Created!",
+            "Berhasil Menambahkan Data!",
             "User Id : " +
               this.props.getResponsDataUsers.userId +
               " , Id : " +

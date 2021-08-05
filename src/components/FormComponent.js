@@ -103,7 +103,7 @@ class FormComponent extends Component {
                 type="submit"
                 disabled={this.props.submitting}
               >
-                Submit
+                Simpan
               </Button>
             </FormGroup>
           </Col>

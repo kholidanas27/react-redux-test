@@ -5,7 +5,7 @@ import { faInfo } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
-  return { title: state.users.users };
+  return { title: state.users.title };
 };
 
 const JumbotronComponent = (props) => {
@@ -20,8 +20,8 @@ const JumbotronComponent = (props) => {
         <hr className="my-2" />
         <p className="lead">
           <Button color="dark">
-            <FontAwesomeIcon icon={faInfo} />
-            Learn More
+            <FontAwesomeIcon  />
+            Selengkapnya
           </Button>
         </p>
       </Jumbotron>

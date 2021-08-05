@@ -133,4 +133,19 @@ export const deleteDataUsers = () => {
     };
 };
 
-
+export const deleteUser = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(
+         "https://jsonplaceholder.typicode.com/posts/"+id
+      )
+      .then(function (response) {
+        console.log(response);
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+        
+      });
+  };
+};

@@ -28,17 +28,17 @@ const NavbarComponent = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">About Us</NavLink>
+              <NavLink href="/">Tentang</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                Pilihan
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
+                <DropdownItem>Pilihan 1</DropdownItem>
+                <DropdownItem>Pilihan 2</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                <DropdownItem>Pilihan</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

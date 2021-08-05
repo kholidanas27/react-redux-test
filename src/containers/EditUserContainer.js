@@ -33,7 +33,7 @@ class EditUserContainer extends Component {
           );
       }else {
         Swal.fire(
-            "Users Update!",
+            "Berhasil Perbarui Data!",
             "User Id : " +
               this.props.getResponsDataUsers.userId +
               " , Id : " +
